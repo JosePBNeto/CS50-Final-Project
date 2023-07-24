@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register Vaccine
+{% endblock %}
+
+{% block main %}
+
+<form action="registervaccine" method="post">
+    <label for="vaccinename">Vaccine Type:</label><br>
+    <input type="text" id="vaccinename" name="vaccinename" autocomplete="off"><br>
+    <label for="nextvaccine">Next Vaccine Data:</label><br>
+    <input type="date" id="vaccinedate" name="vaccinedate"><br><br>
+
+    <select name="petname">
+        <option value="null">Select a PET</option>
+        {% for pets in pet_name %}
+            <option value ="{{pets.petname}}"> {{pets.petname}} </option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    <button type="submit" value="Registervaccine"> Register New Vaccine </button>
+  </form>
+
+{% endblock %}

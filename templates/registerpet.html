@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+<form action="/registerpet" method="post">
+    <label for="petname">Pet Name:</label><br>
+    <input type="text" id="petname" name="petname" autocomplete="off"><br>
+    <label for="petage">Pet Age:</label><br>
+    <input type="text" id="petage" name="petage" autocomplete="off"><br>
+    <label for="petbreed">Breed:</label><br>
+    <input type="text" id="petbreed" name="petbreed" autocomplete="off"><br><br>
+    <button type="submit" value="Registerpet"> Register New Pet </button>
+  </form>
+
+{% endblock %}

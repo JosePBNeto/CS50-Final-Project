@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Pet Schedule
+{% endblock %}
+
+{% block main %}
+
+<div class = menu>
+
+<h1><b>Schedule</b></h1>
+    <br>
+
+    <div class = menu>
+
+        <br>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Vaccine Name:</th>
+                <th scope="col">Date</th>
+                <th scope="col">Pet Name</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for vaccines in vaccine_list %}
+              <tr>
+                <th scope="row">{{vaccines.vaccinename}}</th>
+                <td><b>{{vaccines.nextvaccine}}</b></td>
+                <td><b>{{vaccines.name}}</b></td>
+                <td>
+                  <form action="/petmenu" method="post">
+                      <input name="id_vaccine" type="hidden" value="{{ vaccines.id }}">
+                      <input type="submit" class="done_btn" style="background-color: #00ff00" value="✓">
+                  </form>
+              </td>
+            {% endfor %}
+              </tr>
+
+            </tbody>
+          </table>
+
+    </div>
+
+    <div class = menu>
+
+        <br>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Acaricide Name:</th>
+                <th scope="col">Date</th>
+                <th scope="col">Pet Name</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for acaricides in acaricide_list %}
+              <tr>
+                <th scope="row">{{acaricides.acaricidename}}</th>
+                <td><b>{{acaricides.nextacaricide}}</b></td>
+                <td><b>{{acaricides.name}}</b></td>
+                <td>
+                  <form action="/petmenu" method="post">
+                      <input name="id_acaricide" type="hidden" value="{{ acaricides.id }}">
+                      <input type="submit" class="done_btn" style="background-color: #00ff00" value="✓">
+                  </form>
+              </td>
+            {% endfor %}
+              </tr>
+
+            </tbody>
+          </table>
+
+    </div>
+
+</div>
+<br>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Vermifuge Name:</th>
+        <th scope="col">Date</th>
+        <th scope="col">Pet Name</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for vermifuges in vermifuge_list %}
+      <tr>
+        <th scope="row">{{vermifuges.vermifugename}}</th>
+        <td><b>{{vermifuges.nextvermifuge}}</b></td>
+        <td><b>{{vermifuges.name}}</b></td>
+        <td>
+          <form action="/petmenu"  method="post">
+              <input name="id_vermifuge" type="hidden" value="{{ vermifuges.id }}">
+              <input type="submit" class="done_btn" style="background-color: #00ff00" value="✓">
+          </form>
+      </td>
+    {% endfor %}
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<a href="registerpet" class="btn btn-primary btn-sm" style="background-color: #8064A2">Register New Pet</a> <br><br>
+
+<a href="registervaccine" class="btn btn-primary btn-sm" style="background-color: #10C3CB">Register Next Vaccine</a>
+
+<a href="registeracaricide" class="btn btn-primary btn-sm" style="background-color: #C28436">Register Next Acaricide</a>
+
+<a href="registervermifuge" class="btn btn-primary btn-sm" style="background-color: #7E880C">Register Next Vermifuge</a>
+<br><br>
+
+<div class="row">
+
+{% for pets in pet_list %}
+    <div class="card" style="width: 18rem;">
+      <img src="/static/dog.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ pets.petname }}</h5>
+        <p class="card-text">{{ pets.petbreed }}</p>
+        
+        <a id="load_pet" href="petmenu" class="btn btn-primary">Check</a>
+
+
+        <form action="/"  method="post">
+          <input name="remove_pet" type="hidden" value="{{ pets.id }}">
+          <br>
+          <input id="remove_pet" type="submit" class="remove_btn" style="background-color: #ff0000" value="✖">
+        </form>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+</div>
+
+
+{% endblock %}
