@@ -10,4 +10,4 @@ The app has the following routes in:
     /registeracaricide, /registervaccine, /registervermifuge: Pages where the user can add a new treatment to the selected pet's medical record.
     /login: A page that allows the user to log in to the app.
     /register: A page that allows the user to register a new account.
-    The app uses the following libraries:
+
